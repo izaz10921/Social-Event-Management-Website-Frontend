@@ -1,0 +1,44 @@
+[
+    {
+      "id": 1,
+      "name": "Elegant Weddings",
+      "image": "https://i.ibb.co/3cMMCCY/brides-couple-cutting-wedding-cake.jpg",
+      "price": "$5000",
+      "description": "Celebrate your love in style with our elegant wedding packages. From classic to contemporary, we make your dream wedding a reality."
+    },
+    {
+      "id": 2,
+      "name": "Joyful Birthday Parties",
+      "image": "https://i.ibb.co/nf9Sgzb/start-blowing-first-make-wish.jpg",
+      "price": "$800",
+      "description": "Host a memorable birthday party for your loved ones. Fun themes, delicious cakes, and exciting games tailored for all ages."
+    },
+    {
+      "id": 3,
+      "name": "Romantic Anniversaries",
+      "image": "https://i.ibb.co/R2dkSR8/red-roses-two-glasses-bottle-champagne-candle-table.jpg",
+      "price": "$1200",
+      "description": "Rekindle your love and celebrate years of togetherness. Our romantic anniversary packages create the perfect atmosphere for your special day."
+    },
+    {
+      "id": 4,
+      "name": "Charming Engagement Parties",
+      "image": "https://i.ibb.co/gykbgP0/beautiful-christmas-interior-decoration.jpg",
+      "price": "$700",
+      "description": "Announce your engagement in style. Our charming venues and creative decor set the stage for a memorable and picturesque engagement celebration."
+    },
+    {
+      "id": 5,
+      "name": "Relaxing Retirement Parties",
+      "image": "https://i.ibb.co/LrqRKYr/senior-people-celebrating-together.jpg",
+      "price": "$600",
+      "description": "Celebrate a well-deserved retirement with a relaxing party. Tranquil settings, great food, and heartfelt moments to honor the retiree."
+    },
+    {
+      "id": 6,
+      "name": "Adorable Baby Shower",
+      "image": "https://i.ibb.co/6wPLgtS/preview.jpg",
+      "price": "$400",
+      "description": "Welcome the newest member of the family with an adorable baby shower. Cute themes, delightful treats, and games that make the occasion extra special."
+    }
+  ]
