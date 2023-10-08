@@ -10,7 +10,7 @@ const Home = () => {
     const cardsData = useLoaderData();
     console.log(cardsData);
     return (
-        <div className="bg-white">
+        <div className="bg-slate-100">
             <Banner></Banner>
             {
                 cardsData.map(card => <ServiceCard

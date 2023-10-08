@@ -3,6 +3,8 @@ import Root from "../layouts/Root";
 import Home from "../Pages/Home/Home";
 import About from "../Pages/About/About";
 import Rating from "../Pages/Rating/Rating";
+import Login from "../Pages/Login";
+import Register from "../Pages/Register";
 
 
 const routes = createBrowserRouter([
@@ -25,6 +27,15 @@ const routes = createBrowserRouter([
                 path:'/rating',
                 element:<Rating></Rating>
             },
+            {
+                path:'/login',
+                element:<Login></Login>
+            },
+            {
+                path:'/register',
+                element:<Register></Register>
+            }
+
 
 
         ]
