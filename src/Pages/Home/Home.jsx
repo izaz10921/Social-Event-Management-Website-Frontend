@@ -8,7 +8,7 @@ import ServiceCard from "./ServiceCard";
 const Home = () => {
 
     const cardsData = useLoaderData();
-    console.log(cardsData);
+    
     return (
         <div className="bg-slate-100">
             <Banner></Banner>
