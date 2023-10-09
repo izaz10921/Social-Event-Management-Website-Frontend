@@ -1,12 +1,14 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
-    const { logIn } = useContext(AuthContext);
-    const navigate =useNavigate();
-    const location =useLocation();
+    const { logIn,  logInWithGoogle } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [logInError, setLogInError] = useState('');
 
     const handleLogin = e => {
         e.preventDefault()
@@ -15,12 +17,46 @@ const Login = () => {
         const password = form.get('password');
         logIn(email, password)
             .then(result => {
-                console.log(result.user)
-                navigate(location?.state? location.state :'/');
+                console.log(result.user);
+                e.target.reset();
+                navigate(location?.state ? location.state : '/');
+                Swal.fire({
+
+                    text: "Login Successfully",
+
+                    icon: "success",
+
+                    confirmButtonText: "Done",
+
+                });
+                
             })
             .catch(error => {
                 console.error(error);
+                setLogInError('Email or password is incorrect !');
             })
+    }
+    const handleGoogleLogIn = () =>{
+        logInWithGoogle()
+        .then(result =>{
+            console.log(result.user);
+            navigate(location?.state ? location.state : '/');
+            Swal.fire({
+
+                text: "Login Successfully",
+
+                icon: "success",
+
+                confirmButtonText: "Done",
+
+            });
+        })
+        .catch (
+            error => {
+                console.error(error);
+            }
+        )
+
     }
 
     return (
@@ -43,12 +79,20 @@ const Login = () => {
                         <input type="password" name="password" placeholder="password" className="input input-bordered" required />
 
                     </div>
+                    {
+                        logInError && <p className="text-red-600 font-bold" >{logInError}</p>
+                    }
                     <div className="form-control mt-6">
                         <button className="btn btn-primary">Login</button>
                     </div>
                 </form>
                 <p className="text-center mt-4">Do not have an account? <Link className="text-orange-500 font-bold" to='/register'>Register</Link> </p>
+                
+                <p className="text-center mt-4">or log in with<button onClick={handleGoogleLogIn} className="text-orange-500 font-bold">Google</button></p>
             </div>
+    
+          
+            
 
 
 

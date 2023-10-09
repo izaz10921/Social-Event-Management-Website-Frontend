@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Register = () => {
-    const [registerError,setRegisterError] = useState('');
+    const [registerError, setRegisterError] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
     const { createUser } = useContext(AuthContext);
     const handleRegister = e => {
@@ -13,15 +14,15 @@ const Register = () => {
         const email = form.get('email');
         const password = form.get('password');
 
-        if(password.length < 6){
+        if (password.length < 6) {
             setRegisterError('Password should be at least 6 characters or longer');
             return;
         }
-        else if (!/[A-Z]/.test(password)){
+        else if (!/[A-Z]/.test(password)) {
             setRegisterError('Password should contain at least one uppercase letter');
             return;
         }
-        else if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)){
+        else if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
             setRegisterError('Password should have at least one  special character');
             return;
         }
@@ -35,12 +36,22 @@ const Register = () => {
 
         createUser(email, password)
             .then(result => {
-                console.log(result.user)
-                setSuccessMessage('aci ami' );
+                console.log(result.user);
+                e.target.reset();
+                Swal.fire({
+
+                    text: "Register Successfully",
+
+                    icon: "success",
+
+                    confirmButtonText: "Done",
+
+                });
+
             })
             .catch(error => {
                 console.error(error);
-               
+
             })
     }
     return (
@@ -74,17 +85,17 @@ const Register = () => {
             {
                 successMessage && <p>{successMessage}</p>
             }
-            
+
             {
                 registerError && <p>
                     {registerError}
 
                 </p>
             }
-            
 
 
-           
+
+
 
 
         </div>
