@@ -18,9 +18,9 @@ console.log(greetign);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: B
+#### Answer: A
 
-<i>The variable is declared as greeting but is assigned to greetign . For this the variable greetign is not defined</i>
+<i>The variable is declared as greeting but is assigned to greetign . For this the variable greetign is not defined.But here in console.log function there is greetign and this is an empty array so the out put is {} </i>
 
 </p>
 </details>
@@ -122,9 +122,12 @@ console.log(count);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: B
+#### Answer: C
 
-<i>In JavaScript, the number 0 is considered falsy,so when the value of num is 0 the condition is false but when the value of num is 1 then the if condition is true and it increment the value to 2 </i>
+<i>When num is 0, the condition if (num) is false, so count remains 0.
+When num is 1, the condition if (num) is , so count is incremented to 1.
+When num is 2, the condition if (num) is , so count is incremented to 2.
+When num is 3, the condition if (num) is , so count is incremented to 3.</i>
 
 </p>
 </details>
