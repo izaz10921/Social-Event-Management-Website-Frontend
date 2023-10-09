@@ -15,7 +15,7 @@ const Home = () => {
         <div className="bg-white">
             <Banner></Banner>
             <div><h2 className="text-center text-4xl font-extrabold mt-7 mb-5 text-orange-500 ">Our services</h2></div>
-           <div className="grid grid-cols-2 gap-7 ">
+           <div className="lg:grid lg:grid-cols-2 gap-7 ">
            {
                 cardsData.map(card => <ServiceCard
                 key={card.id} serviceCard={card} >

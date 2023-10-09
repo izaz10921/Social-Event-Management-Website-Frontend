@@ -5,7 +5,7 @@ import RatingCard from "./RatingCard";
 const Rating = () => {
     const cardsData = useLoaderData();
     return (
-        <div className="grid grid-cols-3 px-[200px] gap-8 bg-white">
+        <div className="lg:grid lg:grid-cols-3 lg:px-[200px] px-[20px] lg:gap-8  bg-white">
              {
                 cardsData.map(card => <RatingCard  key={card.id} serviceCard={card}>
 

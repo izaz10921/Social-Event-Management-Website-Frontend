@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 const RatingCard = ({ serviceCard }) => {
     const { name, image } = serviceCard;
     return (
-        <div className='bg-white' >
+        <div className='bg-white lg:pb-0 pb-5 ' >
             
                 <div className="card w-96 bg-slate-100  shadow-xl ">
                     <figure className="px-10 pt-10">

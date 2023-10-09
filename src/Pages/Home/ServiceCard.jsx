@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 const ServiceCard = ({ serviceCard }) => {
     const { name, image, description, price, id } = serviceCard;
     return (
-        <div className='w-[700px] h-[200px] mx-auto pb-4 mt-5  rounded-xl shadow-lg bg-slate-100  '>
-            <div className='flex gap-9 items-center'>
+        <div className='lg:w-[700px]   w-[300px] lg:h-[200px] h-[350px] mx-auto pb-4 mt-5   rounded-xl shadow-lg bg-slate-100  '>
+            <div className='lg:flex lg:gap-9 items-center'>
                 <div className=' w-[300px] h-[200px]  '><img className=' rounded-xl w-[300px] h-[200px] ' src={image} alt="" /></div>
 
 
 
-                <div className='w-1/2 h-[200px] '>
-                    <h4 className='text-2xl font-bold mb-3'>{name}</h4>
-                    <p className='text-base mb-5'>{description}</p>
-                    <div className='grid grid-cols-2 '>
+                <div className='lg:w-1/2 h-[200px] '>
+                    <h4 className='lg:text-2xl text-base font-bold lg:mb-3 mb-1 lg:ml-0 ml-2'>{name}</h4>
+                    <p className='lg:text-base text-sm mb-5 lg:ml-0 ml-2'>{description}</p>
+                    <div className='grid grid-cols-2 lg:ml-0 ml-2'>
                         <div> <button className='  btn btn-secondary '>Price {price}</button></div>
                         <div><Link to={`/serviceCard/${id}`}><button className='btn btn-primary '>Details</button></Link></div>
                     </div>

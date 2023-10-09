@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { updateProfile } from "firebase/auth";
 
 
 const Register = () => {
@@ -13,6 +14,8 @@ const Register = () => {
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
+        const name = form.get('name');
+        const URL = form.get('photoURL')
 
         if (password.length < 6) {
             setRegisterError('Password should be at least 6 characters or longer');
@@ -37,6 +40,13 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
+                updateProfile(result.user,{
+                    displayName: name,
+                    photoURL:URL
+
+                })
+                .then()
+                .catch()
                 e.target.reset();
                 Swal.fire({
 
@@ -61,6 +71,20 @@ const Register = () => {
                 <h2 className="my-10 text-3xl text-center">Register your account</h2>
 
                 <form onSubmit={handleRegister} className="md:w-3/4 lg:w-1/2 mx-auto">
+                <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">User name</span>
+                        </label>
+                        <input type="text" placeholder="name"
+                            name="name" className="input input-bordered" required />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">PhotoURL</span>
+                        </label>
+                        <input type="text" placeholder="photoURL"
+                            name="photoURL" className="input input-bordered" required />
+                    </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
