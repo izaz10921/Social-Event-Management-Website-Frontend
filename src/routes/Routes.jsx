@@ -33,6 +33,7 @@ const routes = createBrowserRouter([
             },
             {
                 path:'/rating',
+                loader: () => fetch ('/data.json'),
                 element:<PrivateRoute><Rating></Rating></PrivateRoute>
             },
             {
