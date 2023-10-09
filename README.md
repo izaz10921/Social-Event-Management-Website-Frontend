@@ -9,3 +9,7 @@
 -4.In my project at the time of registration a user have to make his password using at least 6 character,one special character and one Upper case letter other wise it makes an error message at the time of registration.
 
 -5.After press reload button from any page my web page can not go to the log in page ,it hold the current page state.
+
+-Web site name : Social event
+
+-Website link : https://assignment-9-711aa.web.app/
